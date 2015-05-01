@@ -1,0 +1,95 @@
+<div class="row">
+    <span>&nbsp;</span>
+</div>
+<div class="row">
+
+    <div class="col-lg-10 col-md-10 col-sm-10">
+        <h3>Calculator</h3>
+        <div class="row">
+            <input type="text" ng-model="currentInput" class="form-control input-lg text-right" readonly>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('7')">7</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg " ng-click="numberClicked('8')">8</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('9')">9</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-info btn-lg" ng-click="operationClicked('+')">+</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-info btn-lg" ng-click="operationClicked('-')">-</button>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('4')">4</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('5')">5</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('6')">6</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-info btn-lg" ng-click="operationClicked('x')">x</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-info btn-lg" ng-click="operationClicked('÷')">÷</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-group btn-group-justified">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('1')">1</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('2')">2</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('3')">3</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-danger btn-lg" ng-click="resetClicked()">Clear</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-danger btn-lg" ng-disabled="isButtonDisabled('clear')" ng-click="removeClicked()">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-group btn-group-justified" role="group">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('0')">0</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="numberClicked('00')">00</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" ng-click="dotClicked()">.</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default btn-lg" disabled="">&nbsp;</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-success btn-lg" ng-click="operationClicked('=')">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2">
+        <h3>History <span class="glyphicon glyphicon-book"></span></h3>
+        <span class="list-group-item" ng-repeat="item in history track by $index">
+            {{item}}<br>
+        </span>
+    </div>
+</div>
